@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-12">
+    <h2>My done todo list</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="d-flex todo-list-item" *ngFor="let item of doneItems">
+      <div class="checkbox mr-3">
+        <input type="checkbox" [checked]="item.done" (change)="changeState($event.target.checked, item)" />
+      </div>
+      <div class="label">{{ item.label }}</div>
+    </div>
+  </div>
+</div>
